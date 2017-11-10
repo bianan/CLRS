@@ -97,7 +97,7 @@ class YoungTestCase(unittest.TestCase):
         return True
 
     def test_extract_min(self):
-        for _ in range(1000):
+        for _ in range(100):
             a = self.randomYoung()
             b = []
             for v in a:
@@ -111,7 +111,7 @@ class YoungTestCase(unittest.TestCase):
                 del b[-1]
 
     def test_insert(self):
-        for _ in range(100):
+        for _ in range(10):
             a = self.randomYoung()
             for _ in range(100):
                 insert(a, random.randint(1, 10000))
@@ -124,7 +124,7 @@ class YoungTestCase(unittest.TestCase):
             self.assertEqual(sort_elements(a), b)
 
     def test_find(self):
-        for _ in range(10000):
+        for _ in range(100):
             a = self.randomYoung()
             val = random.randint(0, 100)
             i, j = find(a, val)

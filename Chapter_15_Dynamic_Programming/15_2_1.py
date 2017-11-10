@@ -1,11 +1,11 @@
-import random
+# import random
 import unittest
 
 
 def matrix_chain_order(p):
     n = len(p)
-    m = [[0 for _ in xrange(n)] for _ in xrange(n)]
-    s = [[0 for _ in xrange(n)] for _ in xrange(n)]
+    m = [[0 for _ in range(n)] for _ in range(n)]
+    s = [[0 for _ in range(n)] for _ in range(n)]
     for l in range(2, n):
         for i in range(0, n - l):
             j = i + l
@@ -45,4 +45,7 @@ class ProblemTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+#     unittest.main()
+    p = [30, 35, 15, 5, 10, 20, 25]
+    m, s = matrix_chain_order(p)
+    o = optimal_parens(s, p, 0, len(p) - 1) 

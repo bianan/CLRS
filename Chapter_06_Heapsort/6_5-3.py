@@ -1,3 +1,4 @@
+# implementing a min-priority queue
 import random
 import unittest
 from heap_util import check_min_heap
@@ -58,7 +59,7 @@ class PriorityQueueTestCase(unittest.TestCase):
 
     def test_random(self):
         heap = []
-        for _ in range(10000):
+        for _ in range(100):
             op = random.randint(1, 5)
             if op == 1:
                 if len(heap) == 0:

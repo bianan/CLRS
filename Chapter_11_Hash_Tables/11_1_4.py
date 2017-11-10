@@ -47,4 +47,11 @@ class ProblemTestCase(unittest.TestCase):
 
 
 if __name__ == '__main__':
-    unittest.main()
+#     unittest.main()
+    item = Item()
+    huge_array[item.key] = 0
+#         self.assertEqual(search(item.key), None)
+    insert(item)
+#         self.assertEqual(search(item.key), item)
+    delete(item)
+

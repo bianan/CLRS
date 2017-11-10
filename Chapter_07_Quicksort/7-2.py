@@ -36,7 +36,7 @@ def quicksort(a, p, r):
 class HoareTestCase(unittest.TestCase):
 
     def test_partition(self):
-        for _ in range(10000):
+        for _ in range(1000):
             a = [random.randint(0, 10) for _ in range(random.randint(1, 1000))]
             p = random.randint(0, len(a) - 1)
             r = random.randint(0, len(a) - 1)
@@ -51,7 +51,7 @@ class HoareTestCase(unittest.TestCase):
                 self.assertEqual(a[i], a[t])
 
     def test_sort(self):
-        for _ in range(10000):
+        for _ in range(1000):
             a = [random.randint(0, 10) for _ in range(random.randint(1, 1000))]
             b = sorted(a)
             quicksort(a, 0, len(a))

@@ -1,9 +1,10 @@
 import random
 import unittest
 
-
+# d: d-nary heap
 def parent(d, i):
-    return (i - 1) / d
+    """index starts at 0"""
+    return (i - 1) // d
 
 
 def child(d, i, k):
@@ -19,6 +20,7 @@ def max_heapify(d, a, i):
     if max_idx != i:
         a[i], a[max_idx] = a[max_idx], a[i]
         max_heapify(d, a, max_idx)
+
 
 
 def extract_max(d, a):
@@ -51,7 +53,7 @@ class DaryHeapTestCase(unittest.TestCase):
                 c = child(d, i, k)
                 if c < len(a):
                     if a[i] < a[c]:
-                        print d, a, i
+                        print (d, a, i)
                         return False
                     if not check_heap_rec(c):
                         return False
@@ -62,7 +64,7 @@ class DaryHeapTestCase(unittest.TestCase):
         for _ in range(100):
             d = random.randint(1, 10)
             heap = []
-            for _ in range(1000):
+            for _ in range(50):
                 op = random.randint(1, 5)
                 if len(heap) == 0:
                     op = 2
